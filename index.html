@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Heywood Timber Services - High quality manufacturing services specializing in bespoke joinery since 1989.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Heywood Timber Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+            z-index: 1;
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 2; /* Ensures text is above the overlay */
+        }
+
+        header {
+            background: url('images/ivy-barn.jpg') no-repeat center center;
+            background-size: cover; /* Ensures the image covers the entire section */
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            height: 300px; /* Adjust to match the desired height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+            color: #3a5a40;
+            text-align: center;
+        }
+        .section ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Ensures two columns */
+        gap: 10px; /* Space between items */
+        }
+
+        .section ul li {
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center; /* Centers text within each item */
+        }
+
+        footer {
+            background: #3a5a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        a {
+            color: #3a5a40;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .why-choose-us {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .why-choose-us .features {
+            display: flex;
+            justify-content: space-around; /* Spreads features evenly */
+            align-items: center; /* Aligns content vertically */
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+        }
+
+
+        .why-choose-us .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .why-choose-us .feature i {
+            font-size: 2em; /* Icon size */
+            color: #4CAF50; /* Icon color */
+            margin-bottom: 10px;
+        }
+
+        .why-choose-us .feature p {
+            margin: 0;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Centers the images horizontally */
+            gap: 15px; /* Space between images */
+            margin-top: 20px;
+            overflow-x: auto; /* Allows horizontal scrolling if images exceed container width */
+        }
+
+        .gallery img {
+            height: 250px; /* Normalizes image heights */
+            object-fit: cover; /* Ensures images don't stretch and keep aspect ratio */
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Adds a zoom effect on hover */
+        }
+        
+        @media (max-width: 768px) {
+            .gallery img {
+                height: 200px; /* Reduce image height for smaller devices */
+            }
+        }
+
+        .contact-us {
+            text-align: center;
+            background: #f5f5f5;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-us h2 {
+            color: #3a5a40;
+            margin-bottom: 20px;
+        }
+
+        .contact-us p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-details div {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .contact-details i {
+            font-size: 2em;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .contact-details a {
+            color: #3a5a40;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta .btn {
+            background: #3a5a40;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .cta .btn:hover {
+            background: #5a7a6a;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .section a {
+            color: #3a5a40;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px; /* Space between icon and text */
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        .section i.fab.fa-instagram {
+            font-size: 1.2em;
+            color: #E4405F; /* Instagram's iconic color */
+        }
+
+        .contact-email a {
+            display: inline-block;
+            background-color: #3a5a40;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .contact-email a:hover {
+            background-color: #5a7a6a;
+        }
+
+        .contact-email i {
+            margin-right: 10px; /* Space between the icon and text */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Heywood Timber Services</h1>
+        <p>Your one-stop shop for bespoke joinery</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>About Us</h2>
+            <p>Heywood Timber Services is a well-established manufacturing business since 1989. Over the years, we have built an enviable reputation for our commitment to providing professional and expert services while maintaining the highest quality of work. Our goal is to meet and exceed the expectations of every customer.</p>
+            <p>We specialize in all types of domestic work, ensuring each project is carried out to the highest standards and at competitive prices. Check out our work on our <a href="https://www.instagram.com/heywood.timber.services/?hl=en" target="_blank">Instagram page</a>.</p>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Choose Us?</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-gem"></i>
+                    <p>Tailor Made</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Many Years Experience</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>References Available</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Joinery Work</h2>
+            <p>
+                At Heywood Timber Services, we take pride in delivering high-quality bespoke joinery that exceeds expectations. 
+                With years of expertise and an enviable reputation in the North of England, our craftsmanship is second to none. 
+                We specialize in creating elegant and durable solutions tailored to your needs, with references readily available upon request.
+            </p>
+            <p>
+                For more examples of our work, visit our Instagram page and explore the exceptional quality of our projects:
+                <a href="https://www.instagram.com/heywood.timber.services" target="_blank">
+                    <i class="fab fa-instagram"></i> @heywood.timber.services
+                </a>
+            </p>
+            <div class="gallery">
+                <img src="images/door.jpg" alt="Joinery Work 1">
+                <img src="images/stairs.jpg" alt="Joinery Work 2">
+                <img src="images/window.jpg" alt="Joinery Work 3">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Products & Services</h2>
+            <ul>
+                <li>Architectural Joinery</li>
+                <li>Bespoke Furniture</li>
+                <li>Bespoke Joinery</li>
+                <li>Bookcase Joinery</li>
+                <li>Bookcases</li>
+                <li>Cabinet Makers</li>
+                <li>Cupboard Joinery</li>
+                <li>Doors</li>
+                <li>Fitted Furniture</li>
+                <li>Fitted Wardrobes</li>
+                <li>Furniture Making</li>
+                <li>Letter Carving</li>
+                <li>Spindles</li>
+                <li>Staircase Joinery</li>
+                <li>Window Frames</li>
+                <li>Wood Carvers</li>
+                <li>Wood Finishes</li>
+                <li>Wooden Staircases</li>
+                <li>Wooden Windows</li>
+            </ul>
+        </section>
+
+        <section class="section contact-us">
+            <h2>Get in Touch</h2>
+            <p>Looking for bespoke joinery solutions from a highly skilled and trusted craftsman in the North of England? Whether you're renovating your home or adding a touch of elegance, we’d love to hear from you.</p>
+            <div class="contact-details">
+                <div>
+                    <i class="fas fa-phone-alt"></i>
+                    <p><strong>Call:</strong> <a href="tel:07980894740">07980 894740</a></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>Address:</strong> 183 Skipton Rd, Harrogate, HG1 3EX</p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <p><strong>Email:</strong> <a href="mailto:info@heywoodtimberservices.co.uk?subject=Enquiry about Joinery Services&body=Hello,%0D%0A%0D%0AHere are my details:%0D%0A%0D%0AName: [Your Name]%0D%0ALocation: [Your Location]%0D%0ATelephone: [Your Telephone]%0D%0A%0D%0AMy Enquiry:%0D%0A[Write your enquiry here]">info@heywoodtimberservices.co.uk</a></p>
+                </div>
+            </div>
+            <div class="cta">
+                <p>Don't settle for less. Contact us today to transform your vision into reality!</p>
+                <a href="mailto:info@heywoodtimberservices.co.uk?subject=Enquiry about Joinery Services&body=Hello,%0D%0A%0D%0AHere are my details:%0D%0A%0D%0AName: [Your Name]%0D%0ALocation: [Your Location]%0D%0ATelephone: [Your Telephone]%0D%0A%0D%0AMy Enquiry:%0D%0A[Write your enquiry here]" class="btn">Get in Touch</a>
+            </div>
+        </section>
+            
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Heywood Timber Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
